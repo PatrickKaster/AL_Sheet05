@@ -1,0 +1,77 @@
+% HMC Math dept HW template example
+% v0.04 by Eric J. Malm, 10 Mar 2005
+\documentclass[10pt,a4paper,boxed]{hmcpset}
+
+% set 1-inch margins in the document
+% \usepackage[margin=1in]{geometry}
+\usepackage{enumerate}
+\usepackage{todonotes}
+%\usepackage{tikz}
+%\usetikzlibrary{positioning}
+\usepackage{subfig} % subfigures in figures.	
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+%% work around for subfig and asy environment
+\makeatletter
+\newsavebox{\sfe@box}
+\newenvironment{subfloatenv}[2]{%
+\def\sfe@caption{#1}%
+\def\sfe@label{#2}%
+\setbox\sfe@box\hbox\bgroup\color@setgroup}%
+{\color@endgroup\egroup\subfloat[\sfe@caption]%
+{\usebox{\sfe@box}\label{\sfe@label}}}
+\makeatother
+
+% include this if you want to import graphics files with /includegraphics
+\usepackage{graphicx}
+
+\renewcommand*{\familydefault}{\sfdefault}
+\newcommand{\vect}[1]{\mathbf{#1}}
+
+
+%\tikzset{node distance=2cm, inner/.style={draw,circle}, leaf/.style={draw,rectangle}}
+
+\usepackage{hyperref}
+
+% info for header block in upper right hand corner
+\name{Lukas Gesing, Patrick Kaster}
+\class{MA-INF 4201 - Artificial Life}
+\assignment{Exercise Sheet 5}
+% \duedate{09/03/2004}
+
+\begin{document}
+
+\begin{problem}[Assignment 31]
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}[Assignment 32]
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}[Assignment 33]
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}[Assignment 34]
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}[Assignment 35]
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\begin{problem}[Assignment 36]
+\end{problem}
+\begin{solution}
+\end{solution}
+
+\end{document}
