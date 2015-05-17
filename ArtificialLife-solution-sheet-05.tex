@@ -77,6 +77,14 @@ After $n$ years we have a population of: $P_e = P_s \left( 1 + \frac{1.7}{100} \
 \begin{problem}[Assignment 35]
 \end{problem}
 \begin{solution}
+Suppose the limit exists and call it $a$: $\lim_{n \rightarrow \infty} \frac{F_{n+1}}{F_n} = a$. Then:
+\begin{align*}
+	a = \lim_{n \rightarrow \infty} \frac{F_{n+1}}{F_n} & = \lim_{n \rightarrow \infty} \frac{F_{n}+F_{n-1}}{F_n} = 1 + \lim_{n \rightarrow \infty} \frac{F_{n-1}}{F_n} = 1 + \frac{1}{a} \\
+	& \Rightarrow 0 = a^2 - a - 1 
+\end{align*}
+Using the midnight equation we obtain the solutions: $\frac{1 \pm \sqrt{5}}{2}$.
+
+The program implemented in Python is found in the file \verb|fib.py| and takes the number of iterations as parameter \verb|-n|.
 \end{solution}
 
 \begin{problem}[Assignment 36]
