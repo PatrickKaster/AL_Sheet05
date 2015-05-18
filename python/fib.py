@@ -7,14 +7,6 @@ from optparse import OptionParser
 
 """ author: Patrick Kaster (kaster@cs.uni-bonn.de) """
 
-def fib(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 1
-
-	return float(fib(n-1) + fib(n-2))
-
 
 if __name__ == "__main__":
 
@@ -26,8 +18,14 @@ if __name__ == "__main__":
    	(options, args) = parser.parse_args()
 		
 	lenN = len(str(options.n))
-	
+	cache = [0]*options.n
+	cache[0] = 0
+	cache[1] = 1
+
 	for i in range (2, options.n):
-		quotient = fib(i)/fib(i-1)
-		diff = abs(quotient-((1+math.sqrt(5))/2));
-		print ("n: {1:{0}d}, quotient: {2:e}, diff: {3:e}".format(lenN, i, quotient, diff))
+		cache[i] = cache[i-1] + cache[i-2]
+		
+	for i in range (2, options.n):
+		ratio = float(cache[i])/float(cache[i-1])
+		diff = abs(ratio-((1+math.sqrt(5))/2))
+		print ("n: {1:{0}d}, ratio: {2:e}, diff: {3:e}".format(lenN, i, ratio, diff))
